@@ -1,0 +1,77 @@
+\documentclass{template/thesis.cs.pub.ro}
+\input{template/packages.tex}
+
+% Font & line spacing tweaks
+\setmathfont{STIX Two Math}[StylisticSet=02, StylisticSet=08]
+\setmainfont{STIX Two Text}
+\linespread{1.18}
+
+% Line break tweaks / fixes
+\interdisplaylinepenalty=2500
+\apptocmd{\thebibliography}{\raggedright}{}{}
+\pretolerance=200
+\tolerance=100 
+\emergencystretch=10pt
+
+% Remove the extra space above chapter head
+\makeatletter
+\patchcmd{\@makechapterhead}{\vspace*{50\p@}}{}{}{}
+\patchcmd{\@makeschapterhead}{\vspace*{50\p@}}{}{}{}
+\makeatother
+
+% correct bad hyphenation here
+\hyphenation{op-tical net-works semi-conduc-tor}
+
+% set when printing
+%\hypersetup{hidelinks}
+
+\makeindex
+\begin{document}
+\input{src/global}
+
+\begin{frontmatter} % roman numbering
+
+%\maketitle
+\input{template/titlepage.en}
+\input{template/titlepage.ro}
+
+\begin{acknowledgements}
+\input{src/base/acknowledgements}
+\end{acknowledgements}
+
+\selectlanguage{english}
+\begin{abstract}
+\input{src/base/abstract}
+\end{abstract}
+
+\selectlanguage{romanian}
+%\frontmatter
+\begin{abstractro}
+\input{src/base/abstract_ro}
+\end{abstractro}
+
+\selectlanguage{english}
+\setcounter{tocdepth}{2}
+\input{template/contents.pages}
+
+\printabbrev
+
+\end{frontmatter} % end roman numbering
+
+% 1.5 linespacing for the contents
+% \onehalfspacing
+
+\input{src/main}
+
+%\appendix
+%\input{src/appendix/index}
+
+\Urlmuskip=0mu plus 1mu\relax
+
+\bibliographystyle{template/IEEEtran}
+\bibliography{src/main}
+
+%\printindex
+
+\end{document}
+

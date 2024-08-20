@@ -1,0 +1,50 @@
+\ifthenelse{\boolean{thesissummary}}{
+	\renewcommand{\VARtitlespacing}{\par\vspace*{25mm}}
+	\renewcommand{\VARthesiscaption}{
+		{\Huge PHD THESIS}
+		\par\vspace*{5mm}
+		{\Huge SUMMARY}
+	}
+}{
+	\renewcommand{\VARtitlespacing}{\par\vspace*{35mm}}
+	\renewcommand{\VARthesiscaption}{
+		{\Huge PHD THESIS}
+	}
+}
+\begin{titlepage}
+	\begin{center}
+		{\Large University POLITEHNICA of Bucharest}
+		\par\vspace*{2mm}
+		{\Large Faculty of Automatic Control and Computers,\\
+		Computer Science and Engineering Department}
+		\par\vspace*{3mm}
+		\begin{table*}[h]
+			\begin{center}
+				\begin{tabular}{cccc}
+					\includegraphics[width=0.13\textwidth]{src/img/branding/upb}
+					& & &
+					\includegraphics[width=0.30\textwidth]{src/img/branding/cs}
+				\end{tabular}
+			\end{center}
+		\end{table*}
+		
+		\VARtitlespacing
+		\VARthesiscaption
+		\par\vspace*{15mm}
+		{\Huge \VARtitleen}
+		\VARtitlespacing
+
+		\begin{table*}[h]
+			\begin{center}
+				\begin{tabular}{lcccccl}
+					\Large \textbf{\Large Scientific Adviser:}
+					\vspace*{1mm} &&&&&& \Large \textbf{\Large Author:}\vspace*{1mm} \\
+					\Large \VARadviser &&&&&& \Large \VARauthor
+				\end{tabular}
+			\end{center}
+		\end{table*}
+
+		\par\vspace*{30mm}
+		\Large \VARtitlefooteren
+	\end{center}
+\end{titlepage}

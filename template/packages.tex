@@ -1,0 +1,109 @@
+% Common LaTeX Packages & configuration
+
+% Text / Font Packages
+\usepackage{fontspec} % Advanced font selection in XeLaTeX and LuaLaTeX
+\usepackage{amsmath} % AMS mathematical facilities for LaTeX
+\usepackage{unicode-math}
+\usepackage{textcomp} % support for the Text Companion fonts
+\usepackage{pifont} % Access to PostScript standard Symbol and Dingbats fonts
+\usepackage[misc]{ifsym}
+% Text coloring
+\usepackage{color}
+\usepackage{xcolor}
+
+% IEEEtran tools for bibliography
+\usepackage{template/IEEEtrantools}
+\usepackage{etoolbox} % LaTeX programming facilities
+
+% Use \import for relative paths throughout the document
+\usepackage{import}
+% use this macro to print the current relative path of an imported file
+\makeatletter
+\def\relativepath{\import@path}
+\makeatother
+\graphicspath{{images/}{img/}}
+
+%% URL and hyperref
+\PassOptionsToPackage{hyphens}{url}
+\usepackage{url}
+
+%% Layouts
+% Tables
+\usepackage{tabularx} % Tabulars with adjustable-width columns
+\usepackage{array} % Extending the array and tabular environments
+\usepackage{makecell} % Tabular column heads and multilined cells
+\usepackage{multirow} % Create tabular cells spanning multiple rows
+\usepackage{cellspace} % Ensure minimal spacing of table cells
+\usepackage{parnotes} % Paragraph notes (or elsewhere, e.g., tables)
+
+% Table / figure modifiers
+\usepackage{float}  % floating objects
+\usepackage{caption} % Customising captions in floating environments
+\usepackage{varwidth} % A variable-width minipage
+\usepackage{enumitem} % Control layout of itemize, enumerate, description
+\usepackage{adjustbox} % Graphics package-alike macros for “general” boxes
+
+% Graphics / plotting
+\usepackage{tikz}
+\usetikzlibrary{arrows, positioning, calc, patterns}
+\usepackage{pgfplots}
+\usepackage{pgfplotstable}
+\pgfplotsset{compat=1.14}
+
+% Table styles
+\renewcommand{\arraystretch}{1.2}
+\renewcommand\cellset{\renewcommand\arraystretch{1}%
+\setlength\extrarowheight{0pt}}
+\renewcommand\theadset{\renewcommand\arraystretch{1.5}%
+    \setlength\extrarowheight{0pt}}
+\renewcommand\theadfont{\bfseries}
+\renewcommand\theadset{\setcellgapes{5pt}}
+
+\setlength\tabcolsep{0.4em}
+
+% Algorithm listing packages
+\usepackage{algpseudocode}
+\usepackage{algorithm}
+\usepackage{algorithmicx}
+
+% Example for custom LST syntax highlighing
+\definecolor{lightgray}{rgb}{.9,.9,.9}
+\definecolor{darkgray}{rgb}{.4,.4,.4}
+\definecolor{purple}{rgb}{0.65, 0.12, 0.82}
+\lstdefinelanguage{JavaScript}{
+  keywords={typeof, new, true, false, catch, function, return, null, catch, switch, var, if, in, while, do, else, case, break},
+  keywordstyle=\color{blue}\bfseries,
+  ndkeywords={class, export, boolean, throw, implements, import, this},
+  ndkeywordstyle=\color{darkgray}\bfseries,
+  identifierstyle=\color{black},
+  sensitive=false,
+  comment=[l]{//},
+  morecomment=[s]{/*}{*/},
+  commentstyle=\color{purple}\ttfamily,
+  stringstyle=\color{red}\ttfamily,
+  morestring=[b]',
+  morestring=[b]"
+}
+\lstset{
+   language=JavaScript,
+   backgroundcolor=\color{white},
+   extendedchars=true,
+   basicstyle=\footnotesize\ttfamily,
+   showstringspaces=false,
+   showspaces=false,
+   numbers=left,
+   numberstyle=\footnotesize,
+   numbersep=9pt,
+   tabsize=2,
+   breaklines=true,
+   showtabs=false,
+   captionpos=b
+}
+
+% *** SUBFIGURE PACKAGES ***
+% \ifCLASSOPTIONcompsoc
+%   \usepackage[caption=false,font=normalsize,labelfont=sf,textfont=sf]{subfig}
+% \else
+%   \usepackage[caption=false,font=footnotesize]{subfig}
+% \fi
+
