@@ -46,3 +46,14 @@ dirs:
 clean:
 	rm -rf $(OUT_DIR)/ ./*.pdf
 
+flatten: $(OUT_FLAT)
+	@echo "Flattened to: $(OUT_FLAT)"
+$(OUT_FLAT):
+	mkdir -p "$(@D)"
+	./scripts/flatten.py thesis.tex > $@
+
+spellcheck: $(OUT_FLAT)
+	textidote --check en --output html $(OUT_FLAT) > $(OUT_DIR)/report.html
+
+.PHONY: dirs presentation clean flatten spellcheck
+
