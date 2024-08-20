@@ -2,8 +2,13 @@
 \input{template/packages.tex}
 
 % Font & line spacing tweaks
-\setmathfont{STIX Two Math}[StylisticSet=02, StylisticSet=08]
-\setmainfont{STIX Two Text}
+\setmainfont{STIXTwoText}[
+	Extension      = .otf,
+	UprightFont    = *-Regular,
+	BoldFont       = *-Bold,
+	ItalicFont     = *-Italic,
+	BoldItalicFont = *-BoldItalic]
+\setmathfont{STIXTwoMath-Regular.otf}
 \linespread{1.18}
 
 % Line break tweaks / fixes

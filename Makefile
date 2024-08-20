@@ -6,7 +6,7 @@ OUT_DIRS = $(patsubst %,$(OUT_DIR)/%,$(SRC_DIRS))
 OUT_FLAT = $(OUT_DIR)/flattened.tex
 
 # use tectonic:
-LATEX_BUILD_SYSTEM = tectonic
+LATEX_BUILD_SYSTEM ?= tectonic
 # ... or use latexmk?
 #LATEX_BUILD_SYSTEM = latexmk
 
