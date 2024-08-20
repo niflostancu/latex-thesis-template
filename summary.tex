@@ -1,0 +1,64 @@
+\documentclass{template/thesis.cs.pub.ro}
+\input{template/packages.tex}
+
+\hypersetup{
+  pdftitle={My PhD Thesis -- Summary},
+  pdfsubject={PHD Thesis Summary}
+}
+
+% Font & line spacing tweaks
+\setmainfont{STIXTwoText}[
+	Extension      = .otf,
+	UprightFont    = *-Regular,
+	BoldFont       = *-Bold,
+	ItalicFont     = *-Italic,
+	BoldItalicFont = *-BoldItalic]
+\setmathfont{STIXTwoMath-Regular.otf}
+\linespread{1.1}
+
+% Line break tweaks / fixes
+\interdisplaylinepenalty=2500
+\apptocmd{\thebibliography}{\raggedright}{}{}
+\pretolerance=200
+\tolerance=100 
+\emergencystretch=10pt
+
+% Remove the extra space above chapter head
+\makeatletter
+\patchcmd{\@makechapterhead}{\vspace*{50\p@}}{}{}{}
+\patchcmd{\@makeschapterhead}{\vspace*{50\p@}}{}{}{}
+\makeatother
+
+% correct bad hyphenation here
+\hyphenation{op-tical net-works semi-conduc-tor}
+
+\makeindex
+\begin{document}
+\selectlanguage{english}
+
+\input{src/global}
+
+\title{My PhD Thesis -- Summary}
+\setboolean{thesissummary}{true}
+
+\begin{frontmatter} % roman numbering
+
+\selectlanguage{english}
+\input{template/titlepage.en}
+
+\setcounter{tocdepth}{1}
+\input{template/contents.pages}
+
+\end{frontmatter} % end roman numbering
+
+\input{src/summary}
+
+\Urlmuskip=0mu plus 1mu\relax
+
+\bibliographystyle{template/IEEEtran}
+\bibliography{src/main}
+
+%\printindex
+
+\end{document}
+

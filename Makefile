@@ -20,6 +20,23 @@ tectonic:
 
 .PHONY: build latexmk tectonic
 
+summary: $(LATEX_BUILD_SYSTEM)_summary
+summary_ro: $(LATEX_BUILD_SYSTEM)_summary_ro
+
+latexmk_summary: dirs
+	latexmk -pvc summary.tex
+
+latexmk_summary_ro: dirs
+	latexmk -pvc summary.ro.tex
+
+tectonic_summary:
+	tectonic summary.tex
+
+tectonic_summary_ro:
+	tectonic summary.ro.tex
+
+.PHONY: summary summary_ro latexmk_summary latexmk_summary_ro tectonic_summary tectonic_summary_ro
+
 dirs:
 	@mkdir -p $(OUT_DIRS)
 
