@@ -21,7 +21,7 @@
 % Romanian Language support
 \usepackage{ucs}
 %\usepackage[utf8x]{inputenc}
-\usepackage[english,romanian]{babel}
+\usepackage[main=english,romanian]{babel}
 %\usepackage[english]{babel}
 
 \usepackage{makeidx}
